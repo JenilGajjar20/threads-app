@@ -31,6 +31,7 @@ export class CommentsService {
     return this.commentModel
       .find({ parent: null })
       .populate(['user', 'parent'])
+      .sort({ createdAt: -1 })
       .exec();
   }
 
